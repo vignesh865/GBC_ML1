@@ -1,0 +1,9 @@
+db.sqlite3
+venv
+/resources/secrets
+.idea
+__pycache__/
+authentication/__pycache__/
+integration/__pycache__/
+*/__pycache__/
+.ipynb_checkpoints
