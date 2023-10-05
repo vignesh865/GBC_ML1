@@ -1,0 +1,166 @@
+url: https://medium.com/@vignesh865/next-gen-search-unleashed-the-fusion-of-text-and-semantics-redefining-how-we-search-c67161aaa517
+
+Vignesh Baskaran
+
+Follow
+
+--
+
+Listen
+
+Share
+
+Imagine you’re shopping online for a shirt in the color of a sunny day. You type in “sun color shirts” and hit search. However, what pops up on your screen is a mishmash of shirt-related information, not the cheerful and bright yellow shade you had in mind.
+
+This scenario underscores the challenge of text-based search. While it’s a familiar and straightforward method, it can sometimes struggle to grasp the precise intent behind your words. In this section, our focus is on semantic search, a more advanced approach that understands context, intent, and relationships within your search queries, offering a superior search experience.
+
+Text-based search is what we commonly use. You type in keywords, and a search engine like Elastic Search fetches results that match those partial or exact words. It’s like casting a net to catch fish in the sea, but sometimes you end up with things you didn’t intend to catch.
+
+Semantic search, on the other hand, goes beyond just keywords. It understands the context and relationships between words. It’s as if the search engine isn’t just reading words, but understanding the story behind them.
+
+To illustrate, let’s go back to the “sun color shirts” example. With semantic search, the system grasps that you’re looking for shirts that capture the vibrant and sunny color you have in mind.
+
+In the dynamic world of modern search, we encounter a concept known as embeddings. These are like vectors, but with a twist — they exist in a multi-dimensional space (often referred to as N-dimensional) and capture the diverse aspects of real-world objects. It’s like condensing complex information into simple numerical codes.
+
+Imagine these embeddings as coordinates on a grand map, where each set of coordinates represents an object. For instance, take the word “sun.” It would have its own set of coordinates that encapsulate its qualities like hotness, yellow color, climate, being a star, and even its composition of helium.
+
+Similarly, envision a “yellow color shirt.” Its vector coordinates would encompass characteristics like size, shade of yellow, fabric type, and the climate it’s best suited for.
+
+Now, let’s introduce the magic of semantic search into this equation. Semantic search takes these embeddings to a new level. What adds to the wonder is how closely related objects are positioned in these coordinates. A “yellow color shirt” that’s perfect for the summer is nestled significantly closer to “sun color” than other color shirts. This closeness in coordinates translates into a more relevant search experience.
+
+It’s important to highlight that embeddings are a complex concept with a nuanced process behind their creation, extending beyond our simplified explanation here. If you’re intrigued by the intricacies of embeddings and desire a more in-depth understanding, comment it down, and I will craft a dedicated blog on the topic.
+
+For now, imagine an AI marvel that magically transforms text and images into numerical codes, where closely related items nestle together in this numerical landscape.
+
+Curious about how semantic search really works? In this code walkthrough, we’ll use the fashion-product-images dataset to show you step-by-step. We’ll combine metadata and images to create a seamless search experience that effortlessly marries text and visuals. So, let’s jump into the code and see the magic unfold!
+
+First of all, The metadata_as_sentences method extracts information from the fashion-product-images dataset and constructs meaningful sentences by concatenating metadata. These sentences serve as the foundation for our text-based search.
+
+Then, we employ the display_result function to provide a visuals of the product images. These images are the visual data that powers our semantic-based search approach.
+
+Now, let’s dive into encoding, a pivotal aspect of our search journey. Encoding is the force that fuels both text-based and semantic-based searches.
+
+Bm25 Retriever for Text-Based Search
+
+Think of the Bm25 retriever as our text-based search engine, comparable to ElasticSearch. It transforms metadata into structured documents, forming the foundation of text-based searching.
+
+Embeddings for Semantic Search
+
+On the other hand, we harness the power of embeddings for semantic-based search. These numerical representations extract deep meanings from images. We’re using the SentenceTransformer model, specifically ‘clip-ViT-B-32’, developed by OpenAI.
+
+This is where our encoded image embeddings find a home, becoming accessible for seamless retrieval and similarity comparisons.
+
+Connecting to the Vector Database
+
+First, we establish a connection to the vector database using the QdrantClient.
+
+Storing Embeddings in Vector Database
+
+Next, we go on a journey of persistence. We iterate through the image embeddings and create a batch of vector points, each containing the image’s semantic embedding.
+
+Through this process, our semantic embeddings are stored in the vector database, ready to be transformed into a powerful data retriever. The vector database’s similarity metrics, such as cosine similarity, will help us discover the nearest coordinates in our multidimensional space, enabling swift and accurate search results. With embeddings stored and ready, the stage is set for creating our powerful retriever ensemble.
+
+The EnsembleRetriever does something amazing: it combines different retrievers’ results, then reshuffles them using the Reciprocal Rank Fusion algorithm. Each retriever has its own way of searching, but the ensemble decides how important each result is. Let’s explore how different weight combinations steer the search experience, all while keeping the essence of text and semantics intact.
+
+The neutral retriever, as both text-based and semantic-based searches share equal weight. This equilibrium ensures that both elements influence the search results equally.
+
+The sparse heavy retriever gives precedence to the Bm25 retriever by allocating a higher weight to it. This means text-based search takes the lead, while the semantic aspect plays a supporting role.
+
+Conversely, the dense heavy retriever shines a spotlight on semantic search. It assigns a higher weight to the semantic retriever, letting the encoded image features take center stage.
+
+As we put the dense heavy retriever into action, the results speak for themselves. Relevant yellow-colored apparel takes the spotlight at the forefront. This outcome powerfully highlights the supremacy of semantic search over its text-based counterpart.
+
+The dense heavy retriever not only demonstrates the prowess of our semantic search approach but also underscores its ability to deliver search results that align seamlessly with user intent. This observation further solidifies the notion that when it comes to precision and relevance, semantic search takes the lead, surpassing the capabilities of conventional text-based search methods.
+
+For those eager to dive deeper into semantic search, the full code and additional examples are available on:
+
+https://www.kaggle.com/code/vigneshboss/semantic-image-search
+
+Leave a comment, give a clap if you found it helpful, and don’t forget to share this post with others. Thank you for being a part of this journey!
+
+--
+
+--
+
+Software Development Engineer @ Omuni
+
+Vignesh Baskaran
+
+in
+
+Better Programming
+
+--
+
+Vignesh Baskaran
+
+--
+
+Vignesh Baskaran
+
+--
+
+Vignesh Baskaran
+
+--
+
+Rayyan Shaikh
+
+--
+
+6
+
+Sowmiya Jaganathan
+
+--
+
+2
+
+Heiko Hotz
+
+in
+
+Towards Data Science
+
+--
+
+16
+
+Jonathan Shriftman
+
+--
+
+3
+
+Jayita Bhattacharyya
+
+--
+
+Burcin Bozkaya
+
+in
+
+NVIDIA Merlin
+
+--
+
+Help
+
+Status
+
+Writers
+
+Blog
+
+Careers
+
+Privacy
+
+Terms
+
+About
+
+Text to speech
+
+Teams
+
