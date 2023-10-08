@@ -1,0 +1,7 @@
+Model,Best params,F1_score
+Parameter Tuned DecisionTree Regression,"{'criterion': 'gini', 'max_depth': 2, 'max_leaf_nodes': 10, 'min_impurity_decrease': 0.001, 'min_samples_leaf': 2, 'splitter': 'random'}",0.8710980392156863
+Parameter Tuned Stochastic Gradient Descent,"{'alpha': 0.001, 'loss': 'hinge', 'penalty': 'l1'}",0.8707299621603027
+Parameter Tuned  XGB,"{'alpha': 6, 'eta': 0.1, 'lambda': 0.5, 'max_depth': 8, 'n_estimators': 100, 'tree_method': 'auto'}",0.8704161762767946
+Parameter Tuned  Support Vector Machine,"{'C': 1, 'kernel': 'linear'}",0.8699456484348126
+Parameter Tuned Logistic Regression,"{'C': 0.5, 'max_iter': 500}",0.8695946835109882
+Parameter Tuned RandomForest Classifier,"{'bootstrap': False, 'max_depth': 2, 'max_features': None, 'max_leaf_nodes': 4, 'min_samples_split': 2, 'n_estimators': 200}",0.8669186214077854
